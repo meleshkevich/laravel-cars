@@ -11,6 +11,16 @@
         <a href="/">Home</a>
         <a href="/create-product">Add new product</a>
     </nav>
+    
+  <div>
+    @if (Session::has('success_message'))
+            <div class="alert alert-success" style="background: lightgreen; color: darkgreen">
+                {{ Session::get('success_message') }}
+            </div>    
+    @endif
+
+</div>
+  
     <h1>Product details</h1>
     <p>Product code: {{$product->productCode}}</p>
     <p>Product name: {{$product->productName}}</p>
