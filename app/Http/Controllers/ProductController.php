@@ -48,4 +48,24 @@ class ProductController extends Controller
 
         return view('product.edit', compact('product'));
     }
+
+    public function update(Request $request, $id)
+    {
+        $product = Product::findOrFail($id);
+
+        $product->productCode = $request->input('productCode');
+        $product->productName = $request->input('productName');
+        $product->productLine = $request->input('productLine');
+        $product->productScale = $request->input('productScale');
+        $product->productVendor = $request->input('productVendor');
+        $product->productDescription = $request->input('productDescription');
+        $product->quantityInStock = $request->input('quantityInStock');
+        $product->buyPrice = $request->input('buyPrice');
+        $product->MSRP = $request->input('MSRP');
+        $product->save();
+
+        session()->flash('success_message', 'Product was succesfuly edited!');
+
+        return redirect(url('/product/' . $product->id));
+    }
 }

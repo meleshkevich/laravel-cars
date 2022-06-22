@@ -12,8 +12,9 @@
         <a href="/create-product">Add new product</a>
     </nav>
     <h1>Edit product</h1> 
-{{-- {{dd($product)}} --}}
-    <form action="" method="post">
+ 
+    <form action="{{ route('product.update', ['productId' => $product->id]) }}" method="post">
+         @method('put')
         @csrf
             <label>Product code:</label>
             <input
@@ -69,19 +70,19 @@
              
             <label>Selling price: </label>
             <input
-                type="number"
+                type="text"
                 name="buyPrice"
                 value="{{old('buyPrice', $product->buyPrice)}}"
             >
 
             <label>Recommended price: </label>
             <input
-                type="number"
+                type="text"
                 name="MSRP"
                 value="{{old('MSRP', $product->MSRP)}}"
             >
          <br>
-        <button>Edit</button>
+        <button>Edit product</button>
         <br>
      
 

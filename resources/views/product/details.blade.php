@@ -12,15 +12,8 @@
         <a href="/create-product">Add new product</a>
     </nav>
     
-  <div>
-    @if (Session::has('success_message'))
-            <div class="alert alert-success" style="background: lightgreen; color: darkgreen">
-                {{ Session::get('success_message') }}
-            </div>    
-    @endif
-
-</div>
-  
+    @include('common/message')  
+    
     <h1>Product details</h1>
     <p>Product code: {{$product->productCode}}</p>
     <p>Product name: {{$product->productName}}</p>
@@ -34,7 +27,7 @@
     <p>Recommended price: {{$product->MSRP}}</p>
     <br>
       <a href="{{route('product.edit', ['productId' => $product->id])}}" >
-        <button class="edit">Edit an animal</button>
+        <button class="edit">Edit product</button>
       </a>
 </body>
 </html>
