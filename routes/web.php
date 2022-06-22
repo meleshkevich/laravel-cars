@@ -22,4 +22,6 @@ Route::get('/', function () {
 Route::get('/', [IndexController::class, 'index'])->name('index');
 Route::get('/create-product', [ProductController::class, 'show_page']);
 Route::get('/product/{productId}', [ProductController::class, 'show']);
+Route::get('/product/{productId}/edit', [ProductController::class, 'edit'])->name('product.edit');
+
 Route::post('/create-product', [ProductController::class, 'create']);

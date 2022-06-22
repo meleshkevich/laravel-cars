@@ -32,7 +32,10 @@
     {{-- to add some currency!!! --}}
     <p>Selling price: {{$product->buyPrice}}</p>
     <p>Recommended price: {{$product->MSRP}}</p>
-
+    <br>
+      <a href="{{route('product.edit', ['productId' => $product->id])}}" >
+        <button class="edit">Edit an animal</button>
+      </a>
 </body>
 </html>
  

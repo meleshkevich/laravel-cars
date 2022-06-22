@@ -11,26 +11,26 @@
         <a href="/">Home</a>
         <a href="/create-product">Add new product</a>
     </nav>
-    <h1>Add new product</h1> 
-
+    <h1>Edit product</h1> 
+{{-- {{dd($product)}} --}}
     <form action="" method="post">
         @csrf
             <label>Product code:</label>
             <input
                 type="text"
                 name="productCode"
-                value=""
+                value="{{old('productCode', $product->productCode)}}"
             >
 
             <label>Product name:</label>
             <input
                 type="text"
                 name="productName"
-                value=""
+                value="{{old('productName', $product->productName)}}"
             >
             <label>Product line:</label>
             <select name="productLine">
-                <option value="Classic Cars">Classic Cars</option>
+                <option value="{{old('productLine', $product->productLine)}}">{{$product->productLine}}</option>
                 <option value="Motorcycles">Motorcycles</option>
                 <option value="Planes">Planes</option>
                 <option value="Ships">Ships</option>
@@ -43,45 +43,45 @@
             <input
                 type="text"
                 name="productScale"
-                value=""
+                value="{{old('productScale', $product->productScale)}}"
             >
 
               <label>Manufactured by:</label>
             <input
                 type="text"
                 name="productVendor"
-                value=""
+                value="{{old('productVendor', $product->productVendor)}}"
             >
 
              <label>Product description:</label>
             <input
                 type="text"
                 name="productDescription"
-                value=""
+                value="{{old('productDescription', $product->productDescription)}}"
             >
 
             <label>Available in stock:</label>
             <input
                 type="text"
                 name="quantityInStock"
-                value=""
+                value="{{old('quantityInStock', $product->quantityInStock)}}"
             >
              
             <label>Selling price: </label>
             <input
                 type="number"
                 name="buyPrice"
-                value=""
+                value="{{old('buyPrice', $product->buyPrice)}}"
             >
 
             <label>Recommended price: </label>
             <input
                 type="number"
                 name="MSRP"
-                value=""
+                value="{{old('MSRP', $product->MSRP)}}"
             >
          <br>
-        <button>Create</button>
+        <button>Edit</button>
         <br>
      
 
