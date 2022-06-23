@@ -24,7 +24,7 @@
     </nav>
     <h1>Welcome to our amaizing model store!</h1>
     
-    <h2>Get data for available products - search  <h2>     
+    @include('common/search')
 
     <h2>Alternatively, please feel free to explore available product categories - populate from DB</h2>
     @foreach ($categories as $item)
