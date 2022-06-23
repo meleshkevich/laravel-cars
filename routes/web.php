@@ -26,4 +26,3 @@ Route::get('/product/{productId}', [ProductController::class, 'show']);
 Route::get('/product/{productId}/edit', [ProductController::class, 'edit'])->name('product.edit');
 Route::put('/product/{productId}', [ProductController::class, 'update'])->name('product.update');
 Route::post('/create-product', [ProductController::class, 'create']);
-Route::get('/common/search', [Api\ProductController::class, 'searchApi']);

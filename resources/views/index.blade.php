@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Model store</title>
     <script src="{{ mix('js/loadData.js') }}" defer></script>
+    <script src="{{ mix('js/searchData.js') }}" defer></script>
 </head>
 <body>
     <nav>
@@ -24,7 +25,9 @@
     </nav>
     <h1>Welcome to our amaizing model store!</h1>
     
-    @include('common/search')
+    @include('product/search')
+    
+     <div id="search_results"></div>
 
     <h2>Alternatively, please feel free to explore available product categories - populate from DB</h2>
     @foreach ($categories as $item)

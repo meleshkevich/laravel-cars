@@ -22,4 +22,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::get('/products/{productline}', [ProductController::class, 'productApi']);
 
 //      /api/searchApi
-Route::get('/common/search', [ProductController::class, 'searchApi']);
+Route::get('/product/search', [ProductController::class, 'searchApi'])->name('products.search');

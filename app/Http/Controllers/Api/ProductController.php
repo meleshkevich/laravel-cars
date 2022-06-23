@@ -12,8 +12,6 @@ class ProductController extends Controller
 {
     public function productApi($productline)
     {
-
-
         $response = [];
 
         $products = Product::orderBy('id')
@@ -37,17 +35,11 @@ class ProductController extends Controller
         return $response;
     }
 
-    // public function search()
-    // {
-    //     return view('common/search');
-    // }
     public function searchApi(Request $request)
     {
-
-        $search_query = $request->input('search');
+        $search_query = $request->query('search');
 
         $search_result = Product::where('productName', 'like', "%" . $search_query . "%")->get();
-
 
         $response = [];
         foreach ($search_result as $product) {

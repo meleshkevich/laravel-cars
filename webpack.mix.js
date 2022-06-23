@@ -40,6 +40,7 @@ mix
 
 // ADD ASSETS TO COMPILE HERE:
 mix.js("resources/js/loadData.js", "public/js");
+mix.js("resources/js/searchData.js", "public/js");
 // Examples:
 // mix.sass('resources/css/app.scss', 'public/css');
 // mix.js('resources/js/library.js', 'public/js');
