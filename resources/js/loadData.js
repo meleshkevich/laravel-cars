@@ -3,7 +3,7 @@ const loadData = async (url) => {
     const res = await fetch(url);
     const data = await res.json();
 
-    const container = document.getElementById("selected-cars");
+    const container = document.getElementById("selected_cars");
 
     data.forEach((product) => {
         const element = makeElement(product);
@@ -17,7 +17,7 @@ const makeElement = (product) => {
     element.classList.add("products");
     element.innerHTML = `
         <a href='/product/${product.id}'>
-        <h3 class='product__name'>${product.productName}</h3>
+        <p class='product__name'>${product.productName}</p>
         </a>
 
     `;
@@ -26,7 +26,7 @@ const makeElement = (product) => {
 
 //clear list of selected products each time button is clicked
 const clearList = () => {
-    const list = document.getElementById("selected-cars");
+    const list = document.getElementById("selected_cars");
     while (list.hasChildNodes()) {
         list.removeChild(list.firstChild);
     }

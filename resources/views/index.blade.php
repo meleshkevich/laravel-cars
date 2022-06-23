@@ -27,14 +27,14 @@
     
     @include('product/search')
     
-     <div id="search_results"></div>
+    <div id="search_results"></div>
 
     <h2>Alternatively, please feel free to explore available product categories - populate from DB</h2>
     @foreach ($categories as $item)
         <button class="btn">{{$item->productLine}}</button>      
     @endforeach
       
-        <div id="selected-cars"></div>
+        <div id="selected_cars"></div>
 
 </body>
 </html>

@@ -1,9 +1,16 @@
+// container to render the search results
+const container = document.getElementById("search_results");
+
+// input field from the search
+const input_search = document.getElementById("input_field");
+
+// search button
+const btn_search = document.getElementById("search_btn");
+
 //Api consumer
 const searchData = async (url) => {
     const res = await fetch(url);
     const data = await res.json();
-
-    const container = document.getElementById("search_results");
 
     data.forEach((product) => {
         const element = makeElement(product);
@@ -31,9 +38,7 @@ const clearList = () => {
     }
 };
 
-//add eventListener for each button and execute list render
-const input_search = document.getElementById("input_field");
-
+//add eventListener for input field
 input_search.addEventListener("input", () => {
     let url = "/api/product/search/?search=";
     url += input_search.value;
@@ -41,11 +46,18 @@ input_search.addEventListener("input", () => {
 });
 
 btn_search.addEventListener("click", (el) => {
-    // el.preventDefault();
+    el.preventDefault();
     clearList();
-    searchData(url);
-    // product_line = el.target.innerText;
-    // let url = "/api/products/" + product_line;
-    // clearList();
-    // loadData(url);
+    if (input_search.value) {
+        let url = "/api/product/search/?search=";
+        url += input_search.value;
+        searchData(url);
+    } else {
+        const element = document.createElement("div");
+        element.classList.add("not__found");
+        element.innerHTML = `         
+        <p class='not__found'>We dont find any results :(</p>        
+    `;
+        container.appendChild(element);
+    }
 });
