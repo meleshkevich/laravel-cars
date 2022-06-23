@@ -56,7 +56,7 @@ btn_search.addEventListener("click", (el) => {
         const element = document.createElement("div");
         element.classList.add("not__found");
         element.innerHTML = `         
-        <p class='not__found'>We dont find any results :(</p>        
+        <p class='not__found'>We cant find any results :(</p>        
     `;
         container.appendChild(element);
     }

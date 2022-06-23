@@ -7,10 +7,8 @@
     <title>Create new product</title>
 </head>
 <body>
-    <nav>
-        <a href="/">Home</a>
-        <a href="/create-product">Add new product</a>
-    </nav>
+     @include('common/navigation')
+     
     <h1>Add new product</h1> 
 
     <form action="" method="post">

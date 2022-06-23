@@ -1,11 +1,7 @@
-<h2>Get data for available products<h2>     
-
-    <form action="{{route('products.search')}}" method="get"> 
-
-        <label for="">Search for available models here:</label><br>
-        <input type="text" name="search" value="" id="input_field"><br>
-        <button id="search_btn">Search</button>
-
-    </form>
+<form action="{{route('products.search')}}" method="get"> 
+<h2>Search for available models here:</h2>  
+    <input type="text" name="search" value="" id="input_field"><br>
+    <button id="search_btn">Search</button>
+</form>
 
    

@@ -23,6 +23,6 @@ Route::get('/', function () {
 Route::get('/', [IndexController::class, 'index'])->name('index');
 Route::get('/create-product', [ProductController::class, 'show_page']);
 Route::get('/product/{productId}', [ProductController::class, 'show']);
-Route::get('/product/{productId}/edit', [ProductController::class, 'edit'])->name('product.edit');
-Route::put('/product/{productId}', [ProductController::class, 'update'])->name('product.update');
-Route::post('/create-product', [ProductController::class, 'create']);
+Route::get('/product/{productId}/edit', [ProductController::class, 'edit'])->name('product.edit')->middleware('auth');
+Route::put('/product/{productId}', [ProductController::class, 'update'])->name('product.update')->middleware('auth');
+Route::post('/create-product', [ProductController::class, 'create'])->middleware('auth');

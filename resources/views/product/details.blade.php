@@ -7,10 +7,12 @@
     <title>Product details</title>
 </head>
 <body>
-    <nav>
-        <a href="/">Home</a>
-        <a href="/create-product">Add new product</a>
-    </nav>
+    @include('common/navigation')
+      @auth
+      <a href="{{route('product.edit', ['productId' => $product->id])}}" >
+        <button class="edit">Edit product</button>
+      </a>
+      @endauth
     
     @include('common/message')  
     
@@ -26,9 +28,7 @@
     <p>Selling price: {{$product->buyPrice}}</p>
     <p>Recommended price: {{$product->MSRP}}</p>
     <br>
-      <a href="{{route('product.edit', ['productId' => $product->id])}}" >
-        <button class="edit">Edit product</button>
-      </a>
+    
 </body>
 </html>
  
