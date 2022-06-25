@@ -1,7 +1,239 @@
-* {
-    box-sizing: border-box;
+@import url(https://fonts.googleapis.com/css?family=Josefin+Sans|Raleway:900);
+
+$COLOR_MAIN: #ea0f6b;
+$COLOR_SECONDARY: #4283e4;
+$COLOR_GRAY: #808080;
+$COLOR_WHITE: #ffffff;
+$COLOR_BLACK: #000000;
+
+html {
+    background: url(https://i.imgur.com/kyIYGDZ.png);
+    font-family: "Josefin Sans", Helvetica, Arial, sans-serif;
+    /* position and height for footer */
+    position: relative;
+    min-height: 100%;
 }
 
 body {
-    background-color: lightblue;
+    min-width: 322px;
+    margin: 0 0 75px; /* bottom matches footer height */
+}
+
+a {
+    text-decoration: none;
+}
+
+s/*------------------------------
+hList styles
+--------------------------------*/
+.hList > * {
+    display: inline-block;
+}
+
+.hList > * + * {
+    margin-left: 20px;
+}
+
+.hList-item-link {
+    text-decoration: none;
+}
+
+/*------------------------------
+split styles
+-------------------------------*/
+.split {
+    height: 100%;
+    width: 100%;
+    display: table;
+}
+
+.split > * {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.split-right {
+    text-align: right;
+}
+
+/*------------------------------
+statusBar styles
+-------------------------------*/
+.statusBar {
+    padding: 3px 10px;
+    background: $COLOR_MAIN;
+    color: $COLOR_WHITE;
+    box-shadow: 0 0 3px $COLOR_GRAY;
+    /*position and z-index for box-shadow*/
+    position: relative;
+    z-index: 2;
+}
+
+/*------------------------------
+subNav styles
+-------------------------------*/
+.subNav {
+    padding: 20px 10px;
+    background: $COLOR_WHITE;
+}
+
+.subNav-list {
+    text-align: left;
+}
+
+.subNav-list-item-link {
+    color: $COLOR_GRAY;
+    font-weight: bold;
+}
+
+.subNav-list > * {
+    display: inline-block;
+}
+
+.subNav-list > * + * {
+    margin-left: 10px;
+}
+
+.subNav-list-item-link:hover {
+    color: $COLOR_SECONDARY;
+}
+.subNav-list-item-link:focus {
+    color: $COLOR_SECONDARY;
+}
+.subNav-list-item-link:active {
+    color: $COLOR_SECONDARY;
+}
+.subNav-list-item-link_active {
+    color: $COLOR_MAIN;
+}
+
+.subNav-list-item-link_active:hover {
+    color: $COLOR_MAIN;
+}
+
+.subNav-list-btn {
+    padding: 0.5em;
+    color: #ffffff;
+    background-color: $COLOR_GRAY;
+    border: $COLOR_GRAY;
+    border-radius: 15%;
+}
+.subNav-list-btn:hover {
+    background-color: $COLOR_SECONDARY;
+    cursor: pointer;
+}
+
+// main styles
+.categories-btn,
+.search-btn {
+    margin: 0.5em;
+    padding: 0.5em;
+    color: #ffffff;
+    background-color: $COLOR_GRAY;
+    border: $COLOR_GRAY;
+    border-radius: 15%;
+}
+
+.categories-btn:hover,
+.search-btn:hover {
+    background-color: $COLOR_SECONDARY;
+    cursor: pointer;
+}
+/*------------------------------
+box styles as a container item
+-------------------------------*/
+.box {
+    padding: 10px;
+    border: 2px solid lighten($COLOR_GRAY, 35%);
+    margin: 20px 10px;
+    background: $COLOR_WHITE;
+    /* position for box-shadow */
+    position: relative;
+}
+
+.box_bowShadow:before,
+.box_bowShadow:after {
+    z-index: -1;
+    position: absolute;
+    content: "";
+    bottom: 12px;
+    left: 10px;
+    width: 50%;
+    top: 80%;
+    max-width: 300px;
+    background: $COLOR_GRAY;
+    box-shadow: 0 15px 5px $COLOR_GRAY;
+    -webkit-transform: rotate(-3deg);
+    -moz-transform: rotate(-3deg);
+    -o-transform: rotate(-3deg);
+    -ms-transform: rotate(-3deg);
+    transform: rotate(-3deg);
+}
+
+.box_bowShadow:after {
+    -webkit-transform: rotate(3deg);
+    -moz-transform: rotate(3deg);
+    -o-transform: rotate(3deg);
+    -ms-transform: rotate(3deg);
+    transform: rotate(3deg);
+    right: 10px;
+    left: auto;
+}
+
+/*------------------------------
+ totem styles
+-------------------------------*/
+.totem {
+    padding: 0 5px;
+    line-height: 1.2;
+    text-align: center;
+}
+
+.totem > * {
+    margin-bottom: 10px;
+}
+
+.totem-hd {
+    color: $COLOR_MAIN;
+    font-weight: bold;
+}
+
+.totem-bd {
+    color: $COLOR_BLACK;
+    font-weight: bold;
+}
+
+.totem-ft {
+    color: $COLOR_SECONDARY;
+}
+
+/*------------------------------
+footer styles
+--------------------------------*/
+.footer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 75px; /* matches body margin */
+    width: 100%;
+    padding: 0 10px;
+    box-sizing: border-box;
+    background: $COLOR_WHITE;
+}
+
+/*------------------------------
+ media query for larger screens
+--------------------------------*/
+@media screen and (min-width: 600px) {
+    .block {
+        width: calc(50% - 5px);
+        display: inline-block;
+    }
+}
+
+@media screen and (min-width: 850px) {
+    .block {
+        width: calc(33% - 5px);
+        display: inline-block;
+    }
 }
