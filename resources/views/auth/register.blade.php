@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
     <title>Registration</title>
 </head>
 <body>
-   
+   <main>
     <h1>Register</h1>
     
     @if (count($errors) > 0)
@@ -35,8 +36,9 @@
     <label for="">Repeat password</label><br>  
     <input type="password" name="password_confirmation" value=""><br>    
     <br>  
-    <button>Register</button>
+    <button class="register-btn">Register</button>
  
 </form>
+   </main>
 </body>
 </html>

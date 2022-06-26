@@ -17,6 +17,9 @@ html {
 body {
     min-width: 322px;
     margin: 0 0 75px; /* bottom matches footer height */
+    main {
+        margin: 2em;
+    }
 }
 
 a {
@@ -73,7 +76,7 @@ statusBar styles
 subNav styles
 -------------------------------*/
 .subNav {
-    padding: 20px 10px;
+    padding: 1em 1em;
     background: $COLOR_WHITE;
 }
 
@@ -91,7 +94,7 @@ subNav styles
 }
 
 .subNav-list > * + * {
-    margin-left: 10px;
+    margin-left: 1em;
 }
 
 .subNav-list-item-link:hover {
@@ -111,27 +114,32 @@ subNav styles
     color: $COLOR_MAIN;
 }
 
-.subNav-list-btn {
+.subNav-list-btn,
+.login-btn,
+.register-btn {
     padding: 0.5em;
     color: #ffffff;
     background-color: $COLOR_GRAY;
     border: $COLOR_GRAY;
-    border-radius: 15%;
+    border-radius: 10%;
 }
-.subNav-list-btn:hover {
+.subNav-list-btn:hover,
+.login-btn:hover,
+.register-btn:hover {
     background-color: $COLOR_SECONDARY;
     cursor: pointer;
 }
 
 // main styles
+
 .categories-btn,
 .search-btn {
-    margin: 0.5em;
+    margin: 1em 0;
     padding: 0.5em;
     color: #ffffff;
     background-color: $COLOR_GRAY;
     border: $COLOR_GRAY;
-    border-radius: 15%;
+    border-radius: 10%;
 }
 
 .categories-btn:hover,
@@ -213,7 +221,7 @@ footer styles
 .footer {
     position: absolute;
     left: 0;
-    bottom: 0;
+    bottom: 0px;
     height: 75px; /* matches body margin */
     width: 100%;
     padding: 0 10px;

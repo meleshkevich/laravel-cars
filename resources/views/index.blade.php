@@ -10,21 +10,21 @@
     <script src="{{ mix('js/searchData.js') }}" defer></script>
 </head>
 <body>
-    <main>
-    <div id="bg"></div>
-    @include('common/navigation')
-    <h1>Welcome to our model store!</h1>
-    
-    @include('product/search')
-    
-    <div id="search_results"></div>
+     <div id="bg"></div>
+        @include('common/navigation')
+    <main>       
+        <h1>Welcome to our model store!</h1>
+        
+        @include('product/search')
+        
+        <div id="search_results"></div>
 
-    <h2>Please feel free to explore available product categories</h2>
-    @foreach ($categories as $item)
-        <button class="categories-btn">{{$item->productLine}}</button>      
-    @endforeach
-      
-        <div id="selected_cars"></div>
+        <h2>Please feel free to explore available product categories</h2>
+        @foreach ($categories as $item)
+            <button class="categories-btn">{{$item->productLine}}</button>      
+        @endforeach
+        
+            <div id="selected_cars"></div>
     </main>
 @include ('common/footer')
 </body>

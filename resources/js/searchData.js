@@ -21,11 +21,24 @@ const searchData = async (url) => {
 // create list of searched products
 const makeElement = (product) => {
     const element = document.createElement("div");
-    element.classList.add("products");
+    element.classList.add("block");
     element.innerHTML = `
-        <a href='/product/${product.id}'>
-        <p class='product__name'>${product.productName}</p>
-        </a>
+       <a href='/product/${product.id}'>
+    <div class="box box_bowShadow">
+      <div class="split">
+        <div class="split-left">
+          <div class="totem">
+            <p class="totem-hd">${product.productName}</p>
+            <p class="totem-bd">Scale: ${product.productScale}</p>
+            <p class="totem-ft">${product.productVendor}</p>
+          </div>
+        </div>
+        <div class="split-right">
+          <img src="https://via.placeholder.com/110x130" alt="" />
+        </div>
+      </div>
+    </div> 
+  </a>
     `;
     return element;
 };

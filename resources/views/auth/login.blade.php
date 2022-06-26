@@ -4,9 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{{ mix('css/app.css') }}">
     <title>Login</title>
 </head>
 <body>
+    <main>
     <h1>Log in</h1>
 
     @if (count($errors) > 0)
@@ -31,8 +33,9 @@
         <input type="password" name="password" value=""><br>
         <br>
 
-        <button>Login</button>
+        <button class='login-btn'>Login</button>
 
     </form>
+    </main>
 </body>
 </html>
