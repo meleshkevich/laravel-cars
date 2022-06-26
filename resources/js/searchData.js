@@ -5,7 +5,7 @@ const container = document.getElementById("search_results");
 const input_search = document.getElementById("input_field");
 
 // search button
-const btn_search = document.getElementById("search_btn");
+const btn_search = document.getElementById("search-btn");
 
 //Api consumer
 const searchData = async (url) => {

@@ -6,6 +6,18 @@ $COLOR_GRAY: #808080;
 $COLOR_WHITE: #ffffff;
 $COLOR_BLACK: #000000;
 
+@mixin btn-style {
+    padding: 0.5em;
+    color: #ffffff;
+    background-color: $COLOR_GRAY;
+    border: $COLOR_GRAY;
+    border-radius: 10%;
+}
+
+@mixin btn-style-hover {
+    background-color: $COLOR_SECONDARY;
+    cursor: pointer;
+}
 html {
     background: url(https://i.imgur.com/kyIYGDZ.png);
     font-family: "Josefin Sans", Helvetica, Arial, sans-serif;
@@ -116,18 +128,16 @@ subNav styles
 
 .subNav-list-btn,
 .login-btn,
-.register-btn {
-    padding: 0.5em;
-    color: #ffffff;
-    background-color: $COLOR_GRAY;
-    border: $COLOR_GRAY;
-    border-radius: 10%;
+.register-btn,
+.create-btn {
+    @include btn-style;
 }
+
 .subNav-list-btn:hover,
 .login-btn:hover,
-.register-btn:hover {
-    background-color: $COLOR_SECONDARY;
-    cursor: pointer;
+.register-btn:hover,
+.create-btn:hover {
+    @include btn-style-hover;
 }
 
 // main styles
@@ -224,7 +234,7 @@ footer styles
     bottom: 0px;
     height: 75px; /* matches body margin */
     width: 100%;
-    padding: 0 10px;
+    padding: 0 20px;
     box-sizing: border-box;
     background: $COLOR_WHITE;
 }
