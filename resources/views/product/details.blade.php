@@ -13,7 +13,7 @@
    
       @auth
       <a href="{{route('product.edit', ['productId' => $product->id])}}" >
-        <button class="edit">Edit product</button>
+        <button class="search-btn">Edit product</button>
       </a>
       @endauth
     
@@ -40,6 +40,7 @@
       </div>    
  
   </main>  
+  @include ('common/footer')
 </body>
 </html>
  
